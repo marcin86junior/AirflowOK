@@ -22,7 +22,7 @@ except Exception as e:
 
 # ===============================================
 default_args = {
-    "owner": "airflow",
+    "owner": "marcin",
     "start_date": datetime(2021, 1, 1),
     "retries": 1,
     "retry_delay": timedelta(minutes=1),
@@ -78,7 +78,7 @@ def complete_task(**context):
     df.to_csv(path)
 
 
-with DAG(dag_id="project", schedule_interval="@once", default_args=default_args, catchup=False) as dag:
+with DAG(dag_id="0_project", schedule_interval="@once", default_args=default_args, catchup=False) as dag:
 
     read_file = PythonOperator(task_id="read_file",python_callable=read_file,provide_context=True,)
 

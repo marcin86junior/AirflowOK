@@ -5,7 +5,7 @@ from airflow.operators.python import PythonOperator
 
 
 default_args = {
-    'owner': 'coder2j',
+    'owner': 'marcin',
     'retry': 5,
     'retry_delay': timedelta(minutes=5)
 }
@@ -23,7 +23,7 @@ def get_matplotlib():
 
 with DAG(
     default_args=default_args,
-    dag_id="dag_with_python_dependencies_v03",
+    dag_id="8_dag_with_python_dependencies_v03",
     start_date=datetime(2021, 10, 12),
     schedule_interval='@daily'
 ) as dag:

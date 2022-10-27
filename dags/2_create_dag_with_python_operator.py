@@ -5,7 +5,7 @@ from airflow.operators.python import PythonOperator
 
 
 default_args = {
-    'owner': 'coder2j',
+    'owner': 'marcin',
     'retries': 5,
     'retry_delay': timedelta(minutes=5)
 }
@@ -31,7 +31,7 @@ def get_age(ti):
 
 with DAG(
     default_args=default_args,
-    dag_id='our_dag_with_python_operator_v07',
+    dag_id='2_our_dag_with_python_operator_v07',
     description='Our first dag using python operator',
     start_date=datetime(2021, 10, 6),
     schedule_interval='@daily'

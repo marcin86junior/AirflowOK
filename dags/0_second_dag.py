@@ -5,14 +5,14 @@ from airflow.providers.postgres.operators.postgres import PostgresOperator
 
 
 default_args = {
-    'owner': 'coder2j',
-    'retries': 5,
+    'owner': 'marcin',
+    'retries': 1,
     'retry_delay': timedelta(minutes=5)
 }
 
 
 with DAG(
-    dag_id='dag_with_postgres_operator_v03',
+    dag_id='0_second_dag',
     default_args=default_args,
     start_date=datetime(2021, 12, 19),
     schedule_interval="@once",
